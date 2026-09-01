@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url=https://codeonapps.github.io/">
-  <script>window.location.href = "https://codeonapps.github.io/";</script>
+  <script>
+    // Membaca path, query parameter (?product=...), dan hash dari URL lama
+    var targetUrl = "https://codeonapps.github.io" + window.location.pathname + window.location.search + window.location.hash;
+    
+    // Alihkan langsung ke URL baru beserta parameter produknya
+    window.location.replace(targetUrl);
+  </script>
 </head>
 <body>
-  <p>Toko kami telah berpindah ke <a href="https://codeonapps.github.io/">codeonapps.github.io</a></p>
+  <p>Mengalihkan ke produk... Jika tidak berpindah otomatis, <a id="redirect-link" href="https://codeonapps.github.io/">klik di sini</a>.</p>
+  <script>
+    document.getElementById("redirect-link").href = targetUrl;
+  </script>
 </body>
 </html>
